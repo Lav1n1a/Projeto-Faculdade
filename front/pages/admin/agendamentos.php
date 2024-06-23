@@ -1,6 +1,5 @@
 <?php include ('./includes/header.php')?>
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="padding: 15px;">
    <h2 style="padding-bottom: 10px;">Agendamentos Registrados</h2>
    <div class="card" style="padding: 0px 15px 15px;">
@@ -51,7 +50,6 @@
                 }
             }
         ?>
-
     </table> 
     </div>
 </div>

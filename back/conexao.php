@@ -1,5 +1,5 @@
 <?php
-$server = '172.17.0.2'; 
+$server = '172.17.0.3'; 
 $user = 'root';
 $password = 'root'; 
 $bd = 'agenda_crud2';

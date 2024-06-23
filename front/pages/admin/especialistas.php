@@ -1,6 +1,5 @@
 <?php include('./includes/header.php') ?>
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="padding: 15px;">
     <h2 style="padding-bottom: 10px;">Especialistas Registrados</h2>
     <button class="btn btn-success" style="width: 120px; margin: 7px 0px;" data-bs-toggle="modal" data-bs-target="#cadastrarUsuario" onclick="abrirModal()">Cadastrar</button>

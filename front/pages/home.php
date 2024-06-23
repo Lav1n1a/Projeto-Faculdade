@@ -43,18 +43,16 @@ if ($acao == 'cadastrar') {
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0"></h1>
-                </div><!-- /.col -->
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                     </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Main content -->
     <div class="content">
-
         <div class="container-fluid">
             <div class="modal fade" id="agendar" tabindex="-1" aria-labelledby="modalAgendamento" aria-hidden="true">
                 <div class="modal-dialog">
@@ -205,10 +203,8 @@ if ($acao == 'cadastrar') {
                 }
                 ?>
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div>
     </div>
-    <!-- /.content -->
 </div>
 
 <?php include('includes/footer.php') ?>
