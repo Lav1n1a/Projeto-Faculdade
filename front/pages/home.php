@@ -6,8 +6,9 @@ include '../../back/conexao.php';
 $acao = isset($_GET['acao']) ? $_GET['acao'] : null;
 
 if ($acao == 'cadastrar') {
-    
-    $usuarioID = $_SESSION['id'];
+
+    $id = $_SESSION['id'];
+    $email = $_SESSION['email'];
     $especialidade = $_POST['especialidade'];
     $data = $_POST['data'];
     $hora = $_POST['hora'];
@@ -24,9 +25,9 @@ if ($acao == 'cadastrar') {
         echo "<script>alert('Desculpe, este horário já está ocupado. Por favor, escolha outro horário.');</script>";
     } else {
         // Se o horário estiver disponível, realiza a inserção
-        $sql = "INSERT INTO `agendamentos`(`usuario_id`, `especialidade`, `data`, `hora`, `status`) 
+        $sql = "INSERT INTO `agendamentos`(`id_usuario`, `email`, `especialidade`, `data`, `hora`, `status`) 
                                 VALUES
-                                ('$usuarioID', '$especialidade', '$data', '$hora', '$status')";
+                                ('$id', '$email', '$especialidade', '$data', '$hora', '$status')";
 
         if (mysqli_query($conn, $sql)) {
             echo "<script>alert('Cadastrado com sucesso!');</script>";
@@ -168,18 +169,16 @@ if ($acao == 'cadastrar') {
                 <p style="width: 39%; margin: 5px 35px;"><b>FIQUE ATENTO! TOLERÂNCIA DE 15 MINUTOS DE ATRASO.</b></p>
 
                 <?php
-                //Aqui estou deixando apenas disponiveis a ações de agendar para perfil comum(id:2)
                 $perfilId = $_SESSION['perfil_id'];
 
-                if ($perfilId != 2) {
-                } else {
+                if ($perfilId == 2) {
                 ?>
                     <div style="display: flex; width: 100%; padding: 50px; gap: 50px;  margin-left: 20px;">
                         <?php
-                        $usuario_id = $_SESSION['id'];
+                        $id = $_SESSION['id'];
 
                         $sqlAgendamentoAtivo = " SELECT * FROM agendamentos
-                    WHERE usuario_id = $usuario_id AND status = 1";
+                    WHERE id_usuario = $id AND status = 1";
 
                         $horarioAtivo = mysqli_query($conn, $sqlAgendamentoAtivo);
 
@@ -200,6 +199,7 @@ if ($acao == 'cadastrar') {
                         </button>
                     </div>
                 <?php
+                } else {
                 }
                 ?>
             </div>

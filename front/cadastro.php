@@ -10,22 +10,38 @@ if ($acao == 'cadastrar') {
 
     $senha = $_POST['senha'];
     $email = $_POST['email'];
-    $perfilId = 2; // Comum
+    $perfilId = 2;
 
-    $validaEmail = "SELECT * FROM `usuarios` WHERE email = '$email'";
+    if ($_POST['senha'] && $_POST['email']) {
+        
+        $validaEmail = "SELECT * FROM `usuarios`  WHERE email = '$email'";
 
-    if ($validaEmail) {
-        echo "<script> alert('Este email já esta sendo usado!')</script>";
-    } else {
+        $result = mysqli_query($conn, $validaEmail);
 
-        $sql = "INSERT INTO `usuarios`( `email`, `senha`, `perfil_id`) VALUES 
-    ('$email', '$senha', '$perfilId')";
+        if (mysqli_num_rows($result) > 0) {
 
-        if (mysqli_query($conn, $sql)) { 
-            echo "<script> alert('Usuário cadastrado com sucesso!')</script>";
-            header("location: login.php");
-        } else
-            echo "$nome NÃO foi cadastrado" . mysqli_error($conn);
+            echo "<script>
+        alert('Email já utilizado!')
+        window.location.href = 'cadastro.php'
+        </script> ";
+        } else {
+
+            $sql = "INSERT INTO `usuarios` (`email`, `senha`, `perfil_id`) VALUES ('$email', '$senha', '$perfilId')";
+
+            if (mysqli_query($conn, $sql)) {
+
+                echo "<script>
+            alert('Usuário criado com sucesso!')
+            window.location.href = 'cadastro.php'
+            </script> ";
+            } else {
+                echo "Erro ao cadastrar usuário:" . mysqli_error($conn);
+            }
+        }
+        echo "<script>
+    alert('Valor inválido!')
+    window.location.href = 'cadastro.php'
+    </script> ";
     }
 }
 
@@ -88,5 +104,8 @@ if ($msg) {
         <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
         <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/agendaphp/front/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
+
 </html>

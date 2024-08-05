@@ -16,7 +16,7 @@ if (@$_POST['email'] && @$_POST['senha']) {
       session_start();
       
       $_SESSION['id'] = $resultado['id'];
-      $_SESSION['user'] = $resultado['email'];
+      $_SESSION['email'] = $resultado['email'];
       $_SESSION['perfil_id'] = $resultado['perfil_id'];
 
       header("Location: pages/home.php");
@@ -24,8 +24,8 @@ if (@$_POST['email'] && @$_POST['senha']) {
      
     } else {
       echo "<script> 
-      alert('Login Inválido!');
-      window.location.href = 'login.php';
+        alert('Este usuário não existe!')
+        window.location.href = 'login.php';
       </script>";
       unset($_POST);
       $_POST['email'] = '';
