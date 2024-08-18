@@ -4,7 +4,7 @@ include '../back/conexao.php';
 if (@$_POST['email'] && @$_POST['senha']) {
 
   $email =  $_POST['email'];
-  $senha = $_POST['senha'];
+  $senha = md5($_POST['senha']);
 
   $sql = "SELECT * FROM `usuarios` WHERE email = '$email' AND senha = '$senha' limit 1";
 
@@ -14,14 +14,12 @@ if (@$_POST['email'] && @$_POST['senha']) {
     if (($email == $resultado['email']) and ($senha == $resultado['senha'])) {
 
       session_start();
-      
+
       $_SESSION['id'] = $resultado['id'];
       $_SESSION['email'] = $resultado['email'];
       $_SESSION['perfil_id'] = $resultado['perfil_id'];
 
       header("Location: pages/home.php");
-
-     
     } else {
       echo "<script> 
         alert('Este usuário não existe!')
@@ -38,6 +36,7 @@ if (@$_POST['email'] && @$_POST['senha']) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,9 +56,9 @@ if (@$_POST['email'] && @$_POST['senha']) {
         <a class="navbar-brand" href="#" style="margin-left: 34px; font-family: 'Phudu', cursive; font-size: 27px; color:black;">Agenda<i class="bi bi-calendar-plus"></i>Saude</a>
       </div>
       <div class="card-body">
-        <form action="login.php" method="post">
+        <form action="login.php" method="post" id="loginForm">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Email" name="email">
+            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -67,7 +66,7 @@ if (@$_POST['email'] && @$_POST['senha']) {
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Senha" name="senha">
+            <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -86,9 +85,29 @@ if (@$_POST['email'] && @$_POST['senha']) {
       </div>
     </div>
 
+    <script>
+      document.querySelector("#loginForm").addEventListener("submit", () => {
+        const email = document.querySelector('#email').value;
+        const senha = document.querySelector('#senha').value;
+
+        if (email == '' && senha == '') {
+          alert('Digite um e-mail e senha!');
+          window.href = '/agendaphp/front/login.php'
+        } else if (email == '' && senha != '') {
+          alert('Digite um e-mail!');
+          window.href = '/agendaphp/front/login.php'
+        } else if (email != '' && senha == '') {
+          alert('Digite uma senha!');
+          window.href = '/agendaphp/front/login.php'
+        }
+
+      });
+    </script>
+
 
     <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
     <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/agendaphp/front/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
 </body>
+
 </html>

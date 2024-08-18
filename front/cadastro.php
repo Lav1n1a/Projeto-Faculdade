@@ -8,12 +8,12 @@ $tipoMsg = isset($_GET['tipo']) ? $_GET['tipo'] : null;
 
 if ($acao == 'cadastrar') {
 
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
     $email = $_POST['email'];
     $perfilId = 2;
 
     if ($_POST['senha'] && $_POST['email']) {
-        
+
         $validaEmail = "SELECT * FROM `usuarios`  WHERE email = '$email'";
 
         $result = mysqli_query($conn, $validaEmail);
@@ -44,7 +44,6 @@ if ($acao == 'cadastrar') {
     </script> ";
     }
 }
-
 if ($msg) {
     echo $msg;
 }
@@ -71,10 +70,10 @@ if ($msg) {
                 <a class="navbar-brand" href="#" style="margin-left: 34px; font-family: 'Phudu', cursive; font-size: 27px; color:black;">Agenda<i class="bi bi-calendar-plus"></i>Saude</a>
             </div>
             <div class="card-body">
-                <form action="cadastro.php?acao=cadastrar" method="post">
+                <form action="cadastro.php?acao=cadastrar" method="post" id="cadastroForm">
                     <p>Torne-se um paciente!</p>
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email" name="email">
+                        <input type="email" class="form-control" placeholder="Email" name="email" id="email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -82,7 +81,7 @@ if ($msg) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Senha" name="senha">
+                        <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -100,6 +99,25 @@ if ($msg) {
                 </form>
             </div>
         </div>
+
+        <script>
+            document.querySelector("#cadastroForm").addEventListener("submit", () => {
+                const email = document.querySelector('#email').value;
+                const senha = document.querySelector('#senha').value;
+
+                if (email == '' && senha == '') {
+                    alert('Digite um e-mail e senha!');
+                    window.href = '/agendaphp/front/cadastro.php'
+                } else if (email == '' && senha != '') {
+                    alert('Digite um e-mail!');
+                    window.href = '/agendaphp/front/cadastro.php'
+                } else if (email != '' && senha == '') {
+                    alert('Digite uma senha!');
+                    window.href = '/agendaphp/front/cadastro.php'
+                }
+
+            });
+        </script>
 
         <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
         <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
