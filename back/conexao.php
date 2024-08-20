@@ -1,15 +1,13 @@
 <?php
-$server = '172.17.0.2'; 
-$email = 'root';
-$password = 'root'; 
-$bd = 'agenda';
+$HOST = 'ep-shrill-bonus-a29kj3k0.eu-central-1.pg.koyeb.app'; 
+$USER = 'koyeb-adm';
+$PASSWORD = 'fahwME8Im9dN'; 
+$NAME = 'koyebdb';
 
-// Conectando ao banco de dados MySQL
-$conn = new mysqli($server, $email, $password, $bd);
+$conn = new mysqli($HOST, $USER, $PASSWORD,$NAME);
 
 if ($conn->connect_error) {
     die("Não foi possível conectar ao banco de dados: " . $conn->connect_error);
-} else {
-    // echo "Conectado com sucesso!";
-}
+} 
+   
 ?>
