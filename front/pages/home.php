@@ -69,7 +69,7 @@
                         ?>
 
                         <button class="btn btn-secondary" style="width: 35%; font-size: 20px; padding: 5px; ">
-                            <a href="/agendaphp/front/pages/agendamentos.php" style="display: block; width: 100%; height: 100%; color: white; text-decoration: none; text-align: center; line-height: 1.5;">
+                            <a href="/front/pages/agendamentos.php" style="display: block; width: 100%; height: 100%; color: white; text-decoration: none; text-align: center; line-height: 1.5;">
                                 Meu Agendamento
                             </a>
                         </button>

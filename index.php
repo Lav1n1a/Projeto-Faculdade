@@ -47,15 +47,15 @@
                 <div class="mr-auto place-self-center lg:col-span-7">
                     <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-white">Consultas sem sair de casa!</h1>
                     <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Entre na sua conta ou registre-se para fazer agendamento de consultas e entre em contato com profissionais online.</p>
-                    <a href="/agendaphp/front/login.php" id="botao-login" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-800" style="background-color: #FF4F5A;">
+                    <a href="/front/login.php" id="botao-login" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-800" style="background-color: #FF4F5A;">
                         Entrar
                     </a>
-                    <a href="/agendaphp/front/cadastro.php"  id="botao-cadastrar" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"  style="background-color: black; color: white;">
+                    <a href="/front/cadastro.php"  id="botao-cadastrar" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"  style="background-color: black; color: white;">
                     Cadastrar
                     </a> 
                 </div>
                 <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                    <img src="/agendaphp/front/assets/img-telainicial.png" style="width: 550px;" alt="Medicos">
+                    <img src="/front/assets/img-telainicial.png" style="width: 550px;" alt="Medicos">
             </div>
         </section>
     </div>

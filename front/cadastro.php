@@ -57,9 +57,9 @@ if ($msg) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>login</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link rel="stylesheet" href="/agendaphp/front/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="/agendaphp/front/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="/agendaphp/front/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/front/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/front/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="/front/AdminLTE-3.2.0/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
@@ -94,7 +94,7 @@ if ($msg) {
                         </div>
                     </div>
                     <div style="margin-top: 15px; ">
-                        <p>Já possui cadastrado? <a href="/agendaphp/front/login.php">Login</a></p>
+                        <p>Já possui cadastrado? <a href="/front/login.php">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -107,21 +107,21 @@ if ($msg) {
 
                 if (email == '' && senha == '') {
                     alert('Digite um e-mail e senha!');
-                    window.href = '/agendaphp/front/cadastro.php'
+                    window.href = '/front/cadastro.php'
                 } else if (email == '' && senha != '') {
                     alert('Digite um e-mail!');
-                    window.href = '/agendaphp/front/cadastro.php'
+                    window.href = '/front/cadastro.php'
                 } else if (email != '' && senha == '') {
                     alert('Digite uma senha!');
-                    window.href = '/agendaphp/front/cadastro.php'
+                    window.href = '/front/cadastro.php'
                 }
 
             });
         </script>
 
-        <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
-        <script src="/agendaphp/front/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/agendaphp/front/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
+        <script src="/front/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+        <script src="/front/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/front/AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>

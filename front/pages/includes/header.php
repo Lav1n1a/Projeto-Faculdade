@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agenda Saúde</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link rel="stylesheet" href="/agendaphp/front/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="/agendaphp/front/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/front/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="/front/AdminLTE-3.2.0/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
@@ -23,7 +23,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
       </ul>
-      <a type="button" class="btn btn-danger" href="/agendaphp/front/logout.php" style="margin: 4px 10px 0px 0pX">Deslogar</a>
+      <a type="button" class="btn btn-danger" href="/front/logout.php" style="margin: 4px 10px 0px 0pX">Deslogar</a>
     </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: black;" style="height: 100%;">
       <a class="brand-link" style="text-decoration: none; padding-left: 25px;">
